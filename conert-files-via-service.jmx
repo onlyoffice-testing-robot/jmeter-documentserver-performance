@@ -12,7 +12,20 @@
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-        <collectionProp name="Arguments.arguments"/>
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="SERVER" elementType="Argument">
+            <stringProp name="Argument.name">SERVER</stringProp>
+            <stringProp name="Argument.value">192.241.176.171</stringProp>
+            <stringProp name="Argument.desc">Server to test</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DOCX_FILE" elementType="Argument">
+            <stringProp name="Argument.name">DOCX_FILE</stringProp>
+            <stringProp name="Argument.value">https://s3-us-west-2.amazonaws.com/nct-data-share/docx/googerd.docx</stringProp>
+            <stringProp name="Argument.desc">Docx File to convert</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
       </Arguments>
       <hashTree/>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
@@ -40,7 +53,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">32</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1370726934000</longProp>
         <longProp name="ThreadGroup.end_time">1370726934000</longProp>
@@ -55,12 +68,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;url&quot;:&quot;https://s3-us-west-2.amazonaws.com/nct-data-share/docx/googerd.docx&quot;,&quot;outputtype&quot;:&quot;odt&quot;,&quot;key&quot;:&quot;${__Random(0,1000000)}&quot;,&quot;filetype&quot;:&quot;docx&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;url&quot;:&quot;${DOCX_FILE}&quot;,&quot;outputtype&quot;:&quot;odt&quot;,&quot;key&quot;:&quot;${__Random(0,1000000)}&quot;,&quot;filetype&quot;:&quot;docx&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.241.189.113</stringProp>
+          <stringProp name="HTTPSampler.domain">${SERVER}</stringProp>
           <stringProp name="HTTPSampler.port">80</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
