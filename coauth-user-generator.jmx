@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="SERVER" elementType="Argument">
+            <stringProp name="Argument.name">SERVER</stringProp>
+            <stringProp name="Argument.value">192.241.176.171</stringProp>
+            <stringProp name="Argument.desc">Server to test</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <eu.luminis.jmeter.wssampler.OpenWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.OpenWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.OpenWebSocketSampler" testname="WebSocket Open Connection" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server">192.241.176.171</stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path">2017-11-10-16-22/doc/123/c/456/789/websocket</stringProp>
+        </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="Read greetings" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="Read license info" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="Auth" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <stringProp name="requestData">[&quot;{\&quot;type\&quot;:\&quot;auth\&quot;,\&quot;docid\&quot;:\&quot;-1066053257\&quot;,\&quot;documentCallbackUrl\&quot;:\&quot;http://192.241.176.171/example/track?filename=new.docx&amp;useraddress=85.198.95.234\&quot;,\&quot;token\&quot;:\&quot;fghhfgsjdgfjs\&quot;,\&quot;user\&quot;:{\&quot;id\&quot;:\&quot;uid-1\&quot;,\&quot;username\&quot;:\&quot;Jonn Smith\&quot;,\&quot;firstname\&quot;:null,\&quot;lastname\&quot;:null,\&quot;indexUser\&quot;:-1},\&quot;editorType\&quot;:0,\&quot;lastOtherSaveTime\&quot;:-1,\&quot;block\&quot;:[],\&quot;sessionId\&quot;:null,\&quot;sessionTimeConnect\&quot;:null,\&quot;sessionTimeIdle\&quot;:0,\&quot;documentFormatSave\&quot;:65,\&quot;view\&quot;:false,\&quot;isCloseCoAuthoring\&quot;:false,\&quot;openCmd\&quot;:{\&quot;c\&quot;:\&quot;open\&quot;,\&quot;id\&quot;:\&quot;-1066053257\&quot;,\&quot;userid\&quot;:\&quot;uid-1\&quot;,\&quot;format\&quot;:\&quot;docx\&quot;,\&quot;url\&quot;:\&quot;http://192.241.176.171/example/files/85.198.95.234/new.docx\&quot;,\&quot;title\&quot;:\&quot;new.docx\&quot;,\&quot;nobase64\&quot;:true},\&quot;lang\&quot;:null,\&quot;mode\&quot;:null,\&quot;permissions\&quot;:{\&quot;comment\&quot;:true,\&quot;download\&quot;:true,\&quot;edit\&quot;:true,\&quot;review\&quot;:true},\&quot;jwtOpen\&quot;:\&quot;\&quot;}&quot;]</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="Auth response" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <boolProp name="createNewConnection">false</boolProp>
+          <boolProp name="optional">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="Add shape" enabled="true">
+          <boolProp name="TLS">false</boolProp>
+          <stringProp name="server"></stringProp>
+          <stringProp name="port">80</stringProp>
+          <stringProp name="path"></stringProp>
+          <boolProp name="binaryPayload">false</boolProp>
+          <stringProp name="requestData">&quot;{&quot;type&quot;:&quot;saveChanges&quot;,&quot;changes&quot;:&quot;[\&quot;78;AgAAADEA//8BAI/oDMUUGQAAGgAAAEYAAAAAAAAAAAAAAAAAAAAAAAAA9v///xwAAAA1AC4AMAAuADQALgAxADUALgBAAEAAUgBlAHYA\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAxADYAAABQBAoAAAAyAF8ANwAxADYA\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAxADcAAABBBAoAAAAyAF8ANwAxADcA\&quot;,\&quot;36;CgAAADIAXwA3ADEANgADAFAEBAAAAAoAAAAyAF8ANwAxADcA\&quot;,\&quot;36;CgAAADIAXwA3ADEANwAGAEEEBAAAAAoAAAAyAF8ANwAxADYA\&quot;,\&quot;22;CgAAADIAXwA3ADEANgAKAFAEDAAAAA==\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAxADgAAABABAoAAAAyAF8ANwAxADgA\&quot;,\&quot;36;CgAAADIAXwA3ADEANwACAEEEBAAAAAoAAAAyAF8ANwAxADgA\&quot;,\&quot;36;CgAAADIAXwA3ADEAOAAMAEAEBAAAAAoAAAAyAF8ANwAxADcA\&quot;,\&quot;26;CgAAADIAXwA3ADEAOAABAEAEBAAAAAAAAAA=\&quot;,\&quot;26;CgAAADIAXwA3ADEAOAACAEAEBAAAAAAAAAA=\&quot;,\&quot;26;CgAAADIAXwA3ADEAOAADAEAEBAAAAIOITwA=\&quot;,\&quot;26;CgAAADIAXwA3ADEAOAAEAEAEBAAAAEmCIQA=\&quot;,\&quot;22;CgAAADIAXwA3ADEAOAAJAEAECAAAAA==\&quot;,\&quot;22;CgAAADIAXwA3ADEAOAAKAEAECAAAAA==\&quot;,\&quot;22;CgAAADIAXwA3ADEANgABAFAEEAAAAA==\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAxADkAAABUBAoAAAAyAF8ANwAxADkA\&quot;,\&quot;50;CgAAADIAXwA3ADEAOQAEAFQEAQoAAABfADMAYwBkADQAAQQAAABoAGMAAQIAAAB0AAA=\&quot;,\&quot;46;CgAAADIAXwA3ADEAOQAEAFQEAQYAAABjAGQAMgABAgAAAGwAAQQAAAB2AGMAAA==\&quot;,\&quot;46;CgAAADIAXwA3ADEAOQAEAFQEAQYAAABjAGQANAABBAAAAGgAYwABAgAAAGIAAA==\&quot;,\&quot;42;CgAAADIAXwA3ADEAOQAEAFQEAQIAAAAwAAECAAAAcgABBAAAAHYAYwAA\&quot;,\&quot;47;CgAAADIAXwA3ADEAOQAIAFQEAQIAAABsAAECAAAAdAABAgAAAHIAAQIAAABiAAA=\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAyADAAAABVBAoAAAAyAF8ANwAyADAA\&quot;,\&quot;22;CgAAADIAXwA3ADIAMAACAFUECAAAAA==\&quot;,\&quot;34;CgAAADIAXwA3ADIAMAADAFUEBAAAAAgAAABuAG8AcgBtAA==\&quot;,\&quot;22;CgAAADIAXwA3ADIAMAABAFUEDAAAAA==\&quot;,\&quot;22;CgAAADIAXwA3ADIAMAAFAFUEBgAAAA==\&quot;,\&quot;22;CgAAADIAXwA3ADIAMAAEAFUEBgAAAA==\&quot;,\&quot;49;CgAAADIAXwA3ADEAOQAHAFQEAQAAAAABAAAAAAAAAAoAAAAyAF8ANwAyADAAAAAAAA==\&quot;,\&quot;39;CgAAADIAXwA3ADIAMAAGAFUEAAAAAAAAAAAAAgAAAGwAAgAAAHQA\&quot;,\&quot;39;CgAAADIAXwA3ADIAMAAGAFUEAQAAAAEAAAAAAgAAAHIAAgAAAHQA\&quot;,\&quot;39;CgAAADIAXwA3ADIAMAAGAFUEAgAAAAEAAAAAAgAAAHIAAgAAAGIA\&quot;,\&quot;39;CgAAADIAXwA3ADIAMAAGAFUEAwAAAAEAAAAAAgAAAGwAAgAAAGIA\&quot;,\&quot;27;CgAAADIAXwA3ADIAMAAGAFUEBAAAAAUAAAAA\&quot;,\&quot;34;CgAAADIAXwA3ADEAOQAJAFQEBAAAAAgAAAByAGUAYwB0AA==\&quot;,\&quot;36;CgAAADIAXwA3ADEANwADAEEEBAAAAAoAAAAyAF8ANwAxADkA\&quot;,\&quot;36;CgAAADIAXwA3ADEAOQABAFQEBAAAAAoAAAAyAF8ANwAxADcA\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAyADEAAAA/BAoAAAAyAF8ANwAyADEA\&quot;,\&quot;60;CgAAADIAXwA3ADIAMQABAD8EBAAAAAECAAAAAQEDAAAAAAAAAAEBAAAACgAAAHMAaABhAGQAZQBQwwAA\&quot;,\&quot;38;CgAAADIAXwA3ADIAMQACAD8EBAAAAAEBAAAAAQEDAAAAAAAAAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMQAEAD8EBAAAAAEAAAAAAQEDAAAAAAAAAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMQADAD8EBAAAAAEBAAAAAQEDAAAADAAAAAA=\&quot;,\&quot;36;CgAAADIAXwA3ADEANgAEAFAEBAAAAAoAAAAyAF8ANwAyADEA\&quot;,\&quot;42;AgAAADEAAQABAAoAAAAyAF8ANwAyADMAAAD+AwoAAAAyAF8ANwAyADMA\&quot;,\&quot;57;AgAAADEAAQABAAoAAAAyAF8ANwAyADQAAABZBAoAAAAyAF8ANwAyADQAAQoAAAAyAF8ANwAyADIA\&quot;,\&quot;106;AgAAADEAAQABAAoAAAAyAF8ANwAyADIAAAAFAAoAAAAyAF8ANwAyADIAAYOITwABSYIhAAEKAAAAMgBfADcAMQA2AAECAAAAMgAAAQoAAAAyAF8ANwAyADQAAAEKAAAAMgBfADcAMgAzAA==\&quot;,\&quot;26;CgAAADIAXwA3ADIAMgANAAUAAAgAAAAAAAA=\&quot;,\&quot;26;CgAAADIAXwA3ADIAMgABAAUAAgAAAAEAAAA=\&quot;,\&quot;50;CgAAADIAXwA3ADIAMgAIAAUAAAAAAAoAAAAyAF8ANwAxADYACgAAADIAXwA3ADEANgA=\&quot;,\&quot;36;CgAAADIAXwA3ADEANgAHAFAEBAAAAAoAAAAyAF8ANwAyADIA\&quot;,\&quot;26;CgAAADIAXwA3ADIAMgACAAUAAAAAAAIAAAA=\&quot;,\&quot;50;CgAAADIAXwA3ADIAMgADAAUAAOIEAAAAAAAA4gQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMgAFAAUAAQAAAAApB1EAAAEAAAAAAAAAAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMgAGAAUABgAAAACtbO//AAYAAAAAAAAAAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMgAFAAUAAQAAAAApB1EAAAEAAAAAKQdRAAA=\&quot;,\&quot;38;CgAAADIAXwA3ADIAMgAGAAUABgAAAACtbO//AAYAAAAArWzv/wA=\&quot;,\&quot;58;AgAAADEAAQABAAoAAAAyAF8ANwAyADYAAAAEAAMAAAAKAAAAMgBfADcAMgA2AACAIAAAAAAAAAAAAA==\&quot;,\&quot;93;AgAAADEAAQABAAoAAAAyAF8ANwAyADcAAAAcACcAAAAKAAAAMgBfADcAMgA3AAoAAAAyAF8ANwAyADUAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\&quot;,\&quot;34;CgAAADIAXwA3ADIANwABABwAAQAAAAAAAAAEAAAAAwAAAA==\&quot;,\&quot;87;AgAAADEAAQABAAoAAAAyAF8ANwAyADUAAAADAAoAAAAyAF8ANwAyADUAQgAAAAAAAAAAAAAACgAAADIAXwA3ADIANgABAAAACgAAADIAXwA3ADIANwAB\&quot;,\&quot;93;AgAAADEAAQABAAoAAAAyAF8ANwAyADgAAAAcACcAAAAKAAAAMgBfADcAMgA4AAoAAAAyAF8ANwAyADUAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\&quot;,\&quot;48;CgAAADIAXwA3ADIAOAABABwAAQAAAAAAAAAWAAAACgAAADIAXwA3ADIAMgADAAAA\&quot;,\&quot;44;CgAAADIAXwA3ADIANQABAAMAAQAAAAAAAAAKAAAAMgBfADcAMgA4AAAAAAA=\&quot;,\&quot;18;BgAAADEAMwAyACgAHAAAAAAA\&quot;,\&quot;89;AgAAADEAAQABAAoAAAAyAF8ANwAyADkAAAAcACcAAAAKAAAAMgBfADcAMgA5AAYAAAAxADIAOQAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\&quot;,\&quot;46;CgAAADIAXwA3ADIAOQAdABwAAAAAAACAIAAAAAAAAAAAAACAIAAAAAAAAAAAAA==\&quot;,\&quot;26;CgAAADIAXwA3ADIAOQABABwAAAAAAAEAAAA=\&quot;,\&quot;22;BgAAADEAMwAyAAIAHAAAAAAAAAAAAA==\&quot;,\&quot;28;BgAAADEAMwAyACkAHAAKAAAAMgBfADcAMgA5AA==\&quot;,\&quot;40;BgAAADEAMgA5AAEAAwABAAAAAQAAAAoAAAAyAF8ANwAyADkAAAAAAA==\&quot;,\&quot;40;BgAAADEAMgA5AAEAAwABAAAAAQAAAAoAAAAyAF8ANwAyADgAAAAAAA==\&quot;]&quot;,&quot;startSaveChanges&quot;:true,&quot;endSaveChanges&quot;:true,&quot;isCoAuthoring&quot;:false,&quot;isExcel&quot;:false,&quot;deleteIndex&quot;:null,&quot;excelAdditionalInfo&quot;:&quot;{\&quot;Tk\&quot;:\&quot;uid-12\&quot;,\&quot;wGd\&quot;:\&quot;uid-1\&quot;,\&quot;kbd\&quot;:\&quot;18;CgAAADIAXwA3ADIAOAAAAAAA\&quot;}&quot;,&quot;unlock&quot;:false}&quot;
+</stringProp>
+          <boolProp name="createNewConnection">false</boolProp>
+        </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
