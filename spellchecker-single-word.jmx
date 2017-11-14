@@ -12,7 +12,14 @@
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-        <collectionProp name="Arguments.arguments"/>
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="SERVER" elementType="Argument">
+            <stringProp name="Argument.name">SERVER</stringProp>
+            <stringProp name="Argument.value">192.241.176.171</stringProp>
+            <stringProp name="Argument.desc">Server to test</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
       </Arguments>
       <hashTree/>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
@@ -53,9 +60,9 @@
         <hashTree/>
         <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="Open Spellcheker Socket" enabled="true">
           <boolProp name="TLS">false</boolProp>
-          <stringProp name="server">192.241.189.113</stringProp>
+          <stringProp name="server">${SERVER}</stringProp>
           <stringProp name="port">80</stringProp>
-          <stringProp name="path">/2017-10-28-07-59/spellchecker/doc/123/c/456/789/websocket</stringProp>
+          <stringProp name="path">/2017-11-10-16-22/spellchecker/doc/123/c/456/789/websocket</stringProp>
           <boolProp name="binaryPayload">false</boolProp>
           <boolProp name="createNewConnection">true</boolProp>
           <boolProp name="optional">false</boolProp>
